@@ -28,19 +28,6 @@ jobs:
       run: |
         python braves_players_season_totals.py
 
-    - name: List generated files
-      run: ls -la  # Check if CSV files are created
-
-    - name: Display CSV file contents
-      run: |
-        for file in *.csv; do
-          echo "Contents of $file:"
-          cat "$file"
-        done
-
-    - name: Check Git status
-      run: git status  # Check the status of the Git repository
-
     - name: Commit and push CSV files
       run: |
         git config --global user.name "github-actions"
