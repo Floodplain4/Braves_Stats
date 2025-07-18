@@ -3,7 +3,7 @@ name: Run Braves Stats Scripts Daily
 on:
   schedule:
     # Runs every day at midnight UTC
-    - cron: '0 0 * * *'
+    - cron: '0 2 * * *'
   workflow_dispatch: # Allows you to run manually via GitHub Actions UI
 
 jobs:
