@@ -28,10 +28,10 @@ jobs:
       run: |
         python braves_players_season_totals.py
 
-    - name: Commit updated CSV files
+    - name: Push changes
       run: |
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
         git add *.csv
         git commit -m "Daily stats update [skip ci]" || echo "No changes"
-        git push
+        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
