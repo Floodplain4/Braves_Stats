@@ -36,8 +36,7 @@ jobs:
         if ! git diff --cached --quiet; then
           git commit -m "Daily stats update [skip ci]"
           echo "Pushing changes..."
-          echo "Command: git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Floodplain4/Braves_Stats.git HEAD:main"
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Floodplain4/Braves_Stats.git HEAD:main
+          git push "https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Floodplain4/Braves_Stats.git" HEAD:main
         else
           echo "No changes to commit, skipping push."
         fi
