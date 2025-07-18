@@ -34,4 +34,4 @@ jobs:
         git config --global user.email "github-actions@github.com"
         git add *.csv
         git commit -m "Daily stats update [skip ci]" || echo "No changes"
-        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
+        git push https://x-access-token:${{ secrets.GH_Token }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
