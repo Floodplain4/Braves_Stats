@@ -32,11 +32,13 @@ jobs:
       run: |
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
+        git remote set-url origin "https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Floodplain4/Braves_Stats.git"
         git add *.csv
         if ! git diff --cached --quiet; then
           git commit -m "Daily stats update [skip ci]"
           echo "Pushing changes..."
-          git push "https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Floodplain4/Braves_Stats.git" HEAD:main
+          git push origin HEAD:main
         else
           echo "No changes to commit, skipping push."
         fi
+
